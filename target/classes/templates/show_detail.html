@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title >详情页面</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Classic Style Responsive web templates, Bootstrap Web Templates, Flat Web Templates, Android Compatible web templates,
+    Smartphone Compatible web templates, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <!-- //for-mobile-apps -->
+    <!--<link href="css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>-->
+    <!--<link href="css/style.css" th:href="@{/css/style.css}"  rel="stylesheet" type="text/css" media="all"/>-->
+
+    <!-- //for-mobile-apps -->
+    <link href="css1/bootstrap.css" th:href="@{/css1/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css1/style.css" th:href="@{/css1/style.css}"  rel="stylesheet" type="text/css" media="all"/>
+    <!-- //animation-effect -->
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap Core CSS -->
+    <link th:href="@{/css/bootstrap.css}" rel='stylesheet' type='text/css' />
+
+    <!-- Custom CSS -->
+    <link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+    <!-- font-awesome icons CSS -->
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <!-- //font-awesome icons CSS -->
+
+    <!-- side nav css file -->
+    <link th:href="@{/css/SidebarNav.min.css}"  media='all' rel='stylesheet' type='text/css'/>
+    <!-- side nav css file -->
+
+    <!-- js-->
+    <script th:src="@{/js/jquery-1.11.1.min.js}"></script>
+    <script th:src="@{/js/modernizr.custom.js}"></script>
+
+    <!--webfonts-->
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <!--//webfonts-->
+
+    <!-- Metis Menu -->
+    <script th:src="@{/js/metisMenu.min.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
+    <link href="/css/custom.css" rel="stylesheet">
+    <!--//Metis Menu -->
+
+
+
+</head>
+
+<body>
+<!-- header -->
+<!-- //header -->
+<!-- header-starts -->
+<div class="header" th:include="header::header"></div>
+<!-- //header-ends -->
+<!-- Navigation -->
+<div class="row">
+    <style type="text/css">
+        body{font-size:14px;font-family:arial,verdana,sans-serif;line-height:1.666;padding:0;margin:0;overflow:auto;white-space:normal;word-wrap:break-word;min-height:100px}
+        td, input, button, select, body{font-family:Helvetica, 'Microsoft Yahei', verdana}
+        pre {white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;width:95%}
+        th,td{font-family:arial,verdana,sans-serif;line-height:1.666}
+        img{ border:0}
+        header,footer,section,aside,article,nav,hgroup,figure,figcaption{display:block}
+    </style>
+
+</div>
+<!--content-->
+<div class="product">
+    <div class="container">
+        <div class="col-md-12 animated wow fadeInRight" data-wow-delay=".5s">
+            <div class="col-md-5 grid-im">
+                <div class="flexslider">
+
+
+                    <div class="thumb-image"> <img  th:src="@{'/images/'+ ${node.image}}" src="/images/Figure4.png" data-imagezoom="true" class="img-responsive"> </div>
+
+                </div>
+            </div>
+            <div class="col-md-7 single-top-in">
+                <div class="span_2_of_a1 simpleCart_shelfItem">
+                    <h3 th:text="${node.name}">苹果型身材</h3>
+                    <p class="in-para" th:text="${node.description}" > 苹果型身材是指下肢纤细修长、腰腹却突出的浑圆，类似于中年男性的体型，又称为男性型肥胖。代表明星：陈妍希、张惠妹。苹果型穿衣重点是：提高腰线，露出最纤细的地方。 选择腰线在胸下的服装做内搭，打造高腰线，再将开衫/外套敞开穿，就能够挡住腰部，达到显瘦效果哦。上衣最好选择简约有垂坠感的，避免有膨胀感的印花、刺绣、金属光泽等的面料。</p>
+                    <!-- <div class="price_single">
+                      <span class="reducedfrom item_price">别名</span>
+                      <span class="reducedfrom item_price">男性型肥胖</span>
+                     <a href="#" data-text="Add To Cart" class="but-hover1 item_add">Add To Cart</a>
+                     <div class="clearfix"></div>
+                    </div> -->
+                    <div class="clearfix"> </div>
+                </div>
+                <!----- tabs-box ---->
+                <div class="sap_tabs">
+                    <div id="horizontalTab" style="display: block; width: 100%;" th:each="property:${propertyList}">
+                        <ul class="resp-tabs-list" style="margin-top: 10px;">
+                            <li class="resp-tab-item " role="tab"><span th:text="${property.key}"></span></li>
+                            <li class="resp-tab-item"  role="tab"><span th:text="${property.value}"></span></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+                        <!--<ul class="resp-tabs-list" style="margin-top: 10px;">-->
+                            <!--<li class="resp-tab-item " role="tab"><span >别名</span></li>-->
+                            <!--<li class="resp-tab-item"  role="tab"><span th:text="${node.otherName}">男性型肥胖</span></li>-->
+
+                        <!--</ul>-->
+                        <!--<ul class="resp-tabs-list" style="margin-top: 10px;">-->
+                            <!--<li class="resp-tab-item " role="tab"><span>缺点</span></li>-->
+                            <!--<li class="resp-tab-item"  role="tab"><span th:text="${node.shortcoming}">小肚腩</span></li>-->
+                            <!--<div class="clearfix"></div>-->
+                        <!--</ul>-->
+                        <!--<ul class="resp-tabs-list" style="margin-top: 10px;">-->
+                            <!--<li class="resp-tab-item " role="tab"><span>明星</span></li>-->
+                            <!--<li class="resp-tab-item"  role="tab"><span th:text="${node.star}">陈妍希</span></li>-->
+                            <!--<div class="clearfix"></div>-->
+                        <!--</ul>-->
+
+                    <!-- <script src="js/easyResponsiveTabs.js" type="text/javascript"></script> -->
+
+                    <!---->
+                </div>
+
+            </div>
+            <!----->
+            <div class="clearfix"> </div>
+            <div class=" col-md-si"  >
+                <div style="margin-bottom: 10px">
+                    <h3 >相关节点</h3>
+                    <hr style="border-width: 5px">
+                </div>
+                <div class="col-sm-3 item-grid simpleCart_shelfItem" th:each="nodeR:${nodeList}">
+                    <div class="grid-pro">
+                        <div  class=" grid-product " >
+                            <figure>
+                                <a href="#" th:href="@{'/search_detail?detailId='+${nodeR.id}}">
+                                    <div class="grid-img">
+                                        <img  th:src="@{'/images/'+ ${nodeR.image}}" src="/images/Figure1.png" class="img-responsive" style="width:160px; height: 200px; display:block; " alt="">
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="women">
+                            <h6><a href="#" th:href="@{'/search_detail?detailId='+${nodeR.id}}" th:text="${nodeR.name}">直筒型身材</a></h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--//products-->
+</div>
+
+    <script src="js/imagezoom.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script defer src="js/jquery.flexslider.js"></script>
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+
+</body>
+</html>
